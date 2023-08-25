@@ -1,0 +1,83 @@
+{
+  "manifest_version": 3,
+  "name": "Cosmo AI 1",
+  "version": "1.0",
+  "description": "Your all-in-one AI assistant. Cosmo answers your questions, write emails, tweets & content, summarize videos and articles. Access Cosmo everywhere on the web.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "scripting",
+    "webNavigation",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "backgroundScript.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://extensionpay.com/*"],
+      "js": ["ExtPay.js"],
+      "run_at": "document_start"
+  },
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": ["ExtPay.js","contentScript.js"]
+    },
+    {
+      "matches": ["https://twitter.com/*", "http://twitter.com/*"],
+      "js": ["ExtPay.js","twitter-content.js"],
+      "css": ["prompts.css"]
+    },
+    {
+      "matches": ["https://mail.google.com/*", "http://mail.google.com/*"],
+      "js": ["ExtPay.js","gmail-content.js"],
+      "css": ["prompts.css"]
+
+    },
+    {
+      "matches": ["https://linkedin.com/*", "http://linkedin.com/*", "https://www.linkedin.com/*", "http://www.linkedin.com/*"],
+      "js": ["ExtPay.js","linkedin-content.js"],
+      "css": ["prompts.css"]
+
+    },
+    {
+      "matches": ["https://www.google.com/*", "http://www.linkedin.com/*", "https://google.com/*", "http://google.com/*"],
+      "js": ["ExtPay.js","google-content.js"],
+      "css": ["prompts.css"]
+
+    }
+   
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "fonts/Satoshi-Bold.woff2",
+        "fonts/Satoshi-Medium.woff2",
+        "fonts/Satoshi-Regular.ttf"
+
+
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+  
+  
+}
