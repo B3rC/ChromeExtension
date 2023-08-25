@@ -11,10 +11,7 @@ var extpay = ExtPay('cosmo'); // Careful! See note below
 extpay.startBackground(); 
 
 
-extpay.getUser().then(user => {
-	console.log(user.paid)
-})
-let api = "ŐOAJ";
+
 
 
 // Example: Perform an action when the extension is installed or updated
