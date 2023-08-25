@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link href='http://fonts.googleapis.com/css?family=Stint+Ultra+Expanded' rel='stylesheet' type='text/css'>
+
+
+  
+
+  <title>AI EXTENSION</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <h1 class="header">COSMO</h1>
+    <div class="menu-button" id="menuButton">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="chat-window" id="chatWindow"></div>
+    <textarea id="inputTextarea" class="user-input" rows="1" cols="50" placeholder="Type your message..."></textarea>
+    <button class="send-button" type="button" id="sendBtn">Send</button>
+    <div class="menu-container" id="menuContainer">
+      <a href="commands.html">
+        CUSTOM COMMANDS
+      </a>
+      <a href="settings.html">
+        SETTINGS
+      </a>
+      <a href="subscription.html">
+        MANAGE SUBSCRIPTION
+      </a>
+    </div>
+  </div>
+  
+  <!-- Overlay -->
+  <div class="registeroverlay" id="registerOverlay">
+    <div class="registeroverlay-content">
+      <button class="registeroverlay-button" id="getStartedButton">Get Started</button>
+      <button class="registeroverlay-button" id="loginButton">Login</button>
+    </div>
+  </div>
+  <script src="ExtPay.js"></script>
+  <script src="popup.js"></script>
+
+</body>
+
+
+<!-- HTML !-->
+
+  
+<style>
+
+  
+/* CSS */
+
+.registeroverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .registeroverlay-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .registeroverlay-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #1050a3;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 25px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 25px;
+}
+
+
+
+
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1050a3;
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+</style>
+</html>
