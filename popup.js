@@ -183,7 +183,7 @@ function displayConversationHistory(conversationHistory) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ... Your existing code ...
+  
   
     // Toggle menu container visibility when the menu button is clicked
     const menuButton = document.getElementById('menuButton');
